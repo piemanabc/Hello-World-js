@@ -1,0 +1,383 @@
+/*
+#D1D1D1 - grey (off white) Back grounds
+#171717 - alomost black - Accents and other crak bits
+#999999 - Slightly darker grey
+#5e5e5e - Darker grey
+ */
+
+html {
+	background-color: #5e5e5e;
+	color: #171717;
+	font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.title {
+	color: #ffffff;
+	display: block;
+	background-color: #999999;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	text-align: center;
+
+}
+
+form.add_to_cart{
+	width: 100%;
+}
+
+input {
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.regisFrm input[type="text"],
+.regisFrm input[type="email"],
+.regisFrm input[type="number"],
+.regisFrm input[type="password"] {
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+	outline: none;
+	color: #000;
+	font-weight: 500;
+
+}
+
+.send-button {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.send-button input[type="submit"] {
+	padding: 10px 0;
+	width: 100%;
+	font-size: 18px;
+	font-weight: 500;
+	border: none;
+	outline: none;
+	color: #FFF;
+	background-color: #999999;
+	cursor: pointer;
+}
+
+.send-button input[type="submit"]:hover {
+	background-color: #d8d8d8;
+}
+
+a.logout {
+	float: right;
+}
+
+p.success {
+	color: #34A853;
+}
+
+p.error {
+	color: #EA4335;
+}
+
+
+.img {
+	padding: 10px;
+}
+
+/*nav styling*/
+/* Add a black background color to the top navigation */
+
+.topnav {
+	background-color: #999999;
+	padding: 5px;
+	overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+
+.topnav a {
+	float: left;
+	color: #ffffff;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+
+/* Change the color of links on hover */
+
+.topnav a:hover {
+	background-color: #ffffff;
+	color: #171717;
+	color: black;
+}
+
+
+/* Add a color to the active/current link */
+
+.topnav a.active {
+	background-color: #d8d8d8;
+	color: white;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 4px;
+}
+
+
+/* Create four equal columns that sits next to each other */
+
+.column {
+	flex: 25%;
+	max-width: 25%;
+	padding: 0 4px;
+}
+
+.column img {
+	margin-top: 8px;
+	vertical-align: middle;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	font-size: 30px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+/*nav styling */
+
+ul {
+	list-style-type: none;
+	margin: 0;
+
+	overflow: hidden;
+	background-color: #95B9C7;
+	font-size: 2em;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+
+/* Change the link color to #111 (black) on hover */
+
+li a:hover {
+	background-color: #9dd4ea;
+}
+
+.active {
+	background-color: #000;
+}
+
+/*  SECTIONS  */
+
+.section {
+	clear: both;
+}
+
+/*  COLUMN SETUP  */
+
+.col {
+	display: block;
+	float: left;
+	margin: 1% 0 1% 1.6%;
+}
+
+.col:first-child {
+	margin-left: 0;
+}
+
+/*  GROUPING  */
+
+.group:before,
+.group:after {
+	content: "";
+	display: table;
+}
+
+.group:after {
+	clear: both;
+}
+
+.group {
+	zoom: 1;
+	/* For IE 6/7 */
+}
+
+.center{
+	align-items: center;
+	align-self: center;
+	text-align: center;
+	align-content: center;
+}
+
+
+/*  GRID OF THREE  */
+
+.span_3_of_3 {
+	width: 100%;
+	align-content: center;
+	padding: 10px;
+
+	background-color: #999999;
+	margin: auto;
+}
+
+.span_2_of_3 {
+	width: 66.1%;
+	background-color: #999999;
+	margin: auto;
+	float: left;
+	padding: 10px;
+}
+
+.span_1_of_3 {
+	width: 32.2%;
+padding: 10px;
+	background-color: #999999;
+	float: left;
+}
+
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.col {
+		margin: 1% 0 1% 0%;
+	}
+	.span_3_of_3,
+	.span_2_of_3,
+	.span_1_of_3 {
+		width: 100%;
+	}
+}
+
+
+.card {
+	color: #171717;
+	padding-bottom: 15px;
+	width: 300px;
+	height: 400px;
+	margin: auto;
+	text-align: center;
+	background-color: #999999;
+}
+
+.card :hover{
+opacity: 0.7;
+}
+
+.card a:hover{ opacity: 0.7;}
+.card a:visited{ color: #ffffff; }
+
+button {
+	background-color: #999999;
+	/* same old boring grey */
+	border: none;
+	color: white;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+/*cart page styling */
+
+.box {
+	border-style: double;
+	border-width: thick;
+	padding: 5px;
+	border-radius: 5px;
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+}
+
+.items {
+	border: thin;
+	padding: 10px;
+	border-top: double 5px;
+}
+
+.right {
+	margin: auto;
+	float: right;
+}
+
+/*footer styling */
+
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: left;
+}
+
+body {
+	padding: 10px;
+	width: 80%;
+	margin: auto;
+	clear: both;
+	overflow: hidden;
+	background-color: #D1D1D1;
+}
+
+.shop:link {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+.not-logged-in a:visited{ color: #0807e2; }

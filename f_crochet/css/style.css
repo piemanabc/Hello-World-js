@@ -1,0 +1,375 @@
+/*
+
+color bank
+
+#578c3e dark green
+366747 dark green 2
+bfe06f kinda green but also yellow and also not idk man
+#e7f0af almost white but not really weed
+#3e381e shit brown
+
+*/
+
+html{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#page_container{
+height: 90%;
+align-content: center;
+}
+html a:link{
+  text-decoration: none;
+  color: black;
+}
+
+html a:visited{
+  text-decoration: none;
+  color: black;
+}
+
+input {
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+	width: 87%;
+	padding: 10px;
+	margin: 10px 0;
+	outline: none;
+	color: #000;
+	font-weight: 500;
+}
+
+input.item {
+  width: 49%;
+}
+
+.left {
+  float: left;
+  padding: 7px;
+}
+
+.itemcontent {
+  display: inline-block;
+  width: 40%
+}
+
+/* shop page styling */
+.card,
+.wallet,
+.pocket,
+.card a:visited {
+	margin: auto;
+	text-align: center;
+  font-weight: 400;
+  position: relative;
+  display: inline-block;
+}
+
+.card,
+.card a:visited {
+background-color: #e7f0af;
+color: black;
+width: 300px;
+height: 400px;
+}
+
+.pocket {
+  padding: 10px;
+}
+
+.wallet,
+input.item {
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.wallet::after,
+input.item::after {
+  content: "";
+  border-radius: 5px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.wallet:hover,
+input.item:hover {
+  -webkit-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+}
+
+.wallet:hover::after,
+input.item :hover::after {
+    opacity: 1;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 4px;
+}
+
+.span_1_of_6,
+.span_1_of_5,
+.span_1_of_4{
+  text-align: center;
+  align-items: center;
+  background-color: #bfe06f;
+  float: left;
+}
+
+.span_1_of_3,
+.span_2_of_3,
+.span_3_of_3{
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
+  overflow: visible;
+  display: inline-block;
+}
+
+
+.span_1_of_6{
+  width: 14.65%;
+  padding: 1%;
+}
+
+.span_1_of_5{
+  width: 18%;
+  padding: 1%;
+}
+
+.span_1_of_4 {
+	width: 23%;
+  padding: 1%;
+}
+/*  GRID OF THREE  */
+
+.span_3_of_3 {
+	width: 90%;
+	align-content: center;
+	padding: 10px;
+	margin: auto;
+}
+
+.span_2_of_3 {
+	width: 65%;
+
+	float: left;
+	padding: 10px;
+}
+
+.span_1_of_3 {
+	width: 31%;
+  padding: 10px;
+	float: left;
+}
+
+.span_holder{
+  margin-left: 7%;
+  align-content: center;
+  height: 80%;
+  align-content: space-between;
+
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.col {
+		margin: 1% 0 1% 0%;
+	}
+	.span_3_of_3,
+	.span_2_of_3,
+	.span_1_of_3,
+  .span_1_of_4,
+  .cartleft,
+  .cartright {
+		width: 100%;
+	}
+}
+
+body{
+  margin: 0px;
+  height: 100%;
+}
+
+.halfholder {
+  width: 100%;
+  height: 100%;
+}
+.cartleft,
+.cartright{
+  height: 100%;
+  width: 50%;
+}
+
+.cartrightholder{
+  float: right;
+}
+.cartleft {
+  background-color: #e7f0af;
+  float: left;
+}
+
+.indexbackground {
+  background-image: url(bg_edited.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 90%;
+}
+
+/*nav styling */
+
+.topnav{
+  z-index: 99;
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  font-size: 25px;
+  background-color: #bfe06f;
+}
+
+/* cool nav line effect */
+a.navlink::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #3e381e;
+    transition: width .3s;
+}
+
+a.navlink:hover::after {
+    width: 100%;
+    //transition: width .3s;
+}
+
+
+/* parent div for index*/
+.titleitems {
+align-items: center;
+color: #e7f0af;
+text-align: center;
+}
+
+/* footer styling
+The inde has it's own footer becaus it looks nice
+*/
+footer, .gimmiemoney{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* index footer */
+.gimmiemoney{
+  position: fixed;
+  color: #e7f0af;
+  bottom: 0;
+  width: 100%;
+  height: 5%;
+  font-size: 25px;
+  text-align: center;
+  background-color: #3e381e;
+  padding: 10px
+ }
+
+ /* normal footer */
+ footer{
+   position: fixed;
+   background-color: #bfe06f;
+   bottom: 0;
+   padding: 13px;
+   width: 100%;
+   height: 2%;
+   font-size: 18px;
+   text-align: center;
+   color: #000000;
+   width: 100%;
+  }
+
+
+/* front shop page link */
+.shopnow{
+  color: #3e381e;
+ 	margin: auto;
+ 	width: 20%;
+  padding: 15px;
+  text-decoration: none;
+  border-style: solid;
+  border-width: thick;
+  border-color: #bfe06f;
+}
+
+.aboutcontent {
+  height: 90%;
+}
+
+.gogostore {
+  color: #e7f0af;
+}
+
+.shopnow img {
+width: 20%;
+height: auto;
+}
+
+table {
+  background-color: none;
+}
+
+table.add_to_cart {
+  background-color: none;
+}
+
+table.results {
+font-size: 18px;
+font-weight: normal;
+width: 100%;
+}
+
+tr.results:nth-child(even) {background-color: #bfe06f;}
+
+th.results{
+  font-size: 24px;
+}
+
+td.results,
+th.results{
+  padding: 2px;
+}
+
+tr.results:hover {
+background-color: #e7f0af;
+}
+
+
+/* main title styling*/
+.fronttitle {
+   font-size: 72px;
+   width: 100%;
+   height: 100%;
+   color: #e7f0af;
+ }
+
+ h3 {
+   font-size: 35px;
+   font-weight: 100;
+ }
