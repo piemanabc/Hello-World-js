@@ -1,0 +1,47 @@
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <!--<script src="plotly-2.9.0.min.js"></script>-->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+    <div class="navbar"><span>Slider tester</span></div>
+    <div class="wrapper">
+    <input id="slider" value="0" type="range" min="0" max="100" step="1"> <!--
+       oninput="console.log(this.value)" onchange="console.log(this.value)"> -->
+
+        <div id="chart"></div>
+        <script>
+            function getData() {
+                return document.getElementById("slider").value;
+            }
+            var layout = {
+              title: 'Create a Static Chart',
+              showlegend: false
+            };
+
+            Plotly.plot('chart',[{
+                y:[getData()],
+                type:'line'}],
+                layout, {staticPlot: true}
+            );
+
+            var cnt = 0;
+
+            setInterval(function(){
+
+                Plotly.extendTraces('chart',{ y:[[getData()]]}, [0]);
+                cnt++;
+                if(cnt > 100) {
+                    Plotly.relayout('chart',{
+                        xaxis: {
+                            range: [cnt-100,cnt]
+                        }
+                    });
+                }
+            },15);
+        </script>
+    </div>
+    </body>
+</html>
