@@ -19,7 +19,7 @@ $result = $conn->query($sql);
         <br>
         <br>
         <br>
-        
+
         <br>
         <br>
         <br>
@@ -32,7 +32,7 @@ $result = $conn->query($sql);
           <br>
           <div class="shopnow">
 
-            <a href="shop.php">
+            <a href="chart.php">
               <div class="gogostore">
                 Have a look Instore
             </div>
