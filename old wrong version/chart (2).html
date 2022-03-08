@@ -1,0 +1,114 @@
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <!--<script src="plotly-2.9.0.min.js"></script>
+-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    </head>
+    <body>
+    <div class="navbar"><span>Slider tester</span></div>
+    <div class="wrapper">
+    <input id="slider" value="0" type="range" min="0" max="100" step="1"> <!--
+       oninput="console.log(this.value)" onchange="console.log(this.value)"> -->
+
+    <div id="chart"></div>
+
+    <div class="modes">
+      <div class="mtoprow">
+          <input type="button" id="mode1" value="Slider" onclick="changeMode(parseInt(1)); mode = 0;">
+          <input type="button" id="mode1" value="Saw tooth" onclick="changeMode(parseInt(1)); mode = 1;">
+          <input type="button" id="mode1" value="Mode2" onclick="changeMode(parseInt(1)); mode = 3;">
+          <input type="button" id="mode1" value="Mode4" onclick="changeMode(parseInt(1)); mode = 4;">
+        </div>
+      </div>
+
+      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script>
+          // THis is part of dynaamic mapper // let lastMax = 0;
+          let mode = 0;
+          let driver = 2;
+
+          function changeMode(mode){
+            let slider = parseInt(document.getElementById("slider").value);
+            console.log(slider)
+            // slimple slider mode.
+            if (mode == 0) {
+              return slider
+            // Saw tooth mode
+            } else if (mode == 1){
+                driver = parseInt(String(cnt).slice(-2)) + parseInt(slider);
+
+                /*
+
+                  This is a dynanic mapping fucntion and it does work! however for this mod eit desnt really make sense as a simple greaterthaaan operaation can be performed
+
+                if (lastMax < driver) {
+                lastMax = driver;
+                };
+
+                xMax = 100;
+                xMin = 0;
+
+                yMax = lastMax;
+                yMin = 0;
+
+
+                percent = (driver - yMin) / (yMax - yMin);
+                driver = percent * (xMax - xMin) + xMin;             
+                console.log(yMax);
+              */
+
+
+              if (driver > 100) {
+                return 100;
+              } else {
+                return driver;
+              };
+            } else if (mode == 2) {
+              driver = Math.pow(parseInt(cnt)) ;//+ parseInt(slider); this is causeing issues for some reason
+              console.log(driver);
+              return driver;
+
+            };
+          };
+
+          function getData() {
+            
+            // parseInt(document.getElementById("slider").value) + driver;
+            // console.log(parseInt(document.getElementById("slider").value) + driver);
+            return changeMode(mode)
+          };
+
+         
+
+
+            var layout = {
+              title: 'Power over time',
+              showlegend: false
+            };
+
+            Plotly.newPlot('chart',[{
+                y:[changeMode(mode)],
+                type:'line'}],
+                layout, {staticPlot: true}
+            );
+
+            var cnt = 1;
+
+            setInterval(function(){
+
+            Plotly.extendTraces('chart',{ y:[[changeMode(mode)]]}, [0]);
+              cnt++;
+              if(cnt > 100) {
+                Plotly.relayout('chart',{
+                  xaxis: {
+                    range: [cnt-100,cnt]
+                  }
+                });
+              }
+            },10);
+        </script>
+    </div>
+  </body>
+</html>
